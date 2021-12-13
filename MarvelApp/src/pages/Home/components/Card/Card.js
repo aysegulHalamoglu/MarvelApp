@@ -12,7 +12,12 @@ const Card = (props) => {
   const marvelImage = `${props.item.thumbnail.path}.${props.item.thumbnail.extension}`
   return(
     <View style={styles.container}>  
-
+    {/* if "image_not_available" is written in url do not display image */}
+    {(
+         marvelImage.indexOf('image_not_available') > -1) ? 
+         null 
+         : 
+         (
         <TouchableWithoutFeedback >
          <ImageBackground 
         style={styles.image} 
@@ -24,7 +29,7 @@ const Card = (props) => {
             </Text>
           </ImageBackground>
           </TouchableWithoutFeedback>
-        
+          )}
     </View>
    )
 }
