@@ -36,7 +36,13 @@ const Details =({route})=> {
 
    <View>
            <Text style={styles.headers}>DESCRIPTION  </Text>
-           <Text style={styles.fonts}>{data.results[0].description} </Text> 
+           {
+            (data.results[0].description.length >0 )
+            ?
+            (<Text style={styles.fonts}>{data.results[0].description} </Text> )
+            :
+            (<Text style={styles.fonts}> - </Text>)
+            }
    </View>
 
     <View>
