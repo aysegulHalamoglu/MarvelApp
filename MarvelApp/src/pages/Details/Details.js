@@ -5,7 +5,8 @@ import { characterBeforeIdURL, characterAfterIdURL} from "../../assets/api/marve
 import useFetch from "../../hooks/useFetch";
 // pages
 import LoadingScreen from "../LoadingScreen";
-
+// components
+import ScrollList from "./components/ScrollList";
 // style
 import styles from "./Details.style"
 
@@ -14,7 +15,8 @@ const Details =({route})=> {
   const characterURL= `${characterBeforeIdURL}${id}${characterAfterIdURL}`;
   const {loading,data} = useFetch(characterURL)
 
-
+  const comicsURL = `${characterBeforeIdURL}${id}/comics${characterAfterIdURL}`;
+  const seriesURL = `${characterBeforeIdURL}${id}/series${characterAfterIdURL}`;
 
   const renderList = () =>   (
     <ImageBackground 
@@ -24,7 +26,8 @@ const Details =({route})=> {
     >
    <ImageBackground style={styles.image_body} source={{ uri: `${data.results[0].thumbnail.path}.${data.results[0].thumbnail.extension}` }}>
    </ImageBackground>
- <View style={styles.info_container}>
+ 
+   <View style={styles.info_container}>
    
    <View>
            <Text style={styles.headers} >NAME  </Text>
@@ -33,41 +36,42 @@ const Details =({route})=> {
 
    <View>
            <Text style={styles.headers}>DESCRIPTION  </Text>
+           <Text style={styles.fonts}>{data.results[0].description} </Text> 
    </View>
 
-   <View>
-           <Text style={styles.headers}>COMICS</Text>
-      
-        
-   </View>
+    <View>
+            <Text style={styles.headers}>COMICS</Text>
+           <ScrollList id={id} url= {comicsURL} />
+         
+    </View>
 
-   <View>
-           <Text style={styles.headers}>SERIES</Text>
-          
-   </View>
-   
-   <View>
-           <Text style={styles.headers}>EVENTS</Text>
-        
-   </View>
+    <View>
+            <Text style={styles.headers}>SERIES</Text>
+           <ScrollList id={id} url={seriesURL} />
+    </View>
+    
+    <View>
+            <Text style={styles.headers}>EVENTS</Text>
+           <ScrollList id={id} url={comicsURL}/>
+    </View>
 
-   <View>
-           <Text style={styles.headers}>STORIES</Text>
-       
-   </View>
+    <View>
+            <Text style={styles.headers}>STORIES</Text>
+           <ScrollList id={id} url={comicsURL} />
+    </View>
 
-   <View>
-           <Text style={styles.headers}>RELATED LINKS</Text>
+    <View>
+            <Text style={styles.headers}>RELATED LINKS</Text>
 
-         <View>
-           <Text style={styles.relatedLinks}>Detail</Text>
-           <Text style={styles.relatedLinks}>Wiki</Text>
-           <Text style={styles.relatedLinks}>Comiclink</Text>
-         </View>
-   </View>
+          <View>
+            <Text style={styles.relatedLinks}>Detail</Text>
+            <Text style={styles.relatedLinks}>Wiki</Text>
+            <Text style={styles.relatedLinks}>Comiclink</Text>
+          </View>
+    </View>
 
 
- </View>
+  </View>
 </ImageBackground>
 )
 
@@ -78,8 +82,9 @@ if(loading){
 }
     return (
     <>
-    <StatusBar  backgroundColor="black"
-        barStyle="light-content"/>
+      <StatusBar  
+      backgroundColor="black"
+      barStyle="light-content"/>
       <FlatList 
       keyExtractor={flatlistKey}
       data={data.results} 
