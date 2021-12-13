@@ -58,3 +58,7 @@ buck-out/
 
 # CocoaPods
 /ios/Pods/
+
+# Api keys
+/src/assets/constants/api/
+marvel.js
