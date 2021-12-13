@@ -28,9 +28,5 @@ export default StyleSheet.create({
         fontSize:18,
         padding:5
       },
-
-      modal_centered_view:{
-          backgroundColor:"red"
-      }
    
 })

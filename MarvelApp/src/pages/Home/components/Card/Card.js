@@ -18,13 +18,15 @@ const Card = (props) => {
          null 
          : 
          (
-        <TouchableWithoutFeedback >
+        <TouchableWithoutFeedback 
+        onPress={props.onSelect} >
          <ImageBackground 
         style={styles.image} 
         source={{uri: marvelImage }}
        >
             <Text  
-            style={styles.textButton}>
+            style={styles.textButton}
+            onPress={props.onSelect}>
             {props.item.name}
             </Text>
           </ImageBackground>
