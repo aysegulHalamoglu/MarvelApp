@@ -8,10 +8,10 @@ import Card from "./components/Card";
 import useFetch from "../../hooks/useFetch";
 //screen
 import LoadingScreen from "../LoadingScreen";
-//import ErrorScreen from "../ErrorScreen";
+import ErrorScreen from "../ErrorScreen";
 
 const Home =({navigation})=> {
-  const {loading,data} = useFetch(charactersURL)
+  const {error, loading,data} = useFetch(charactersURL)
 
  //Function to go to Details Screen
  const handleCharacterSelect =(id)=>{
@@ -26,9 +26,9 @@ const Home =({navigation})=> {
     return <LoadingScreen/>
 }
 
-// if(error){
-//     return  <ErrorScreen/>
-// }
+if(error){
+    return  <ErrorScreen />
+}
 
     return (
         <>
