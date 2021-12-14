@@ -16,7 +16,7 @@ const Home =({navigation})=> {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <SearchIcon />
+        <SearchIcon color={'#d11a06'} size={25}/>
       ),
     });
   }, [navigation]);
