@@ -4,6 +4,7 @@ import { FlatList, StatusBar } from "react-native";
 import { charactersURL } from "../../assets/api/marvel";
 //components
 import Card from "./components/Card";
+import SearchIcon from "../../components/SearchIcon";
 //hooks
 import useFetch from "../../hooks/useFetch";
 //screen
@@ -12,7 +13,13 @@ import ErrorScreen from "../ErrorScreen";
 
 const Home =({navigation})=> {
   const {error, loading,data} = useFetch(charactersURL)
-
+  React.useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <SearchIcon />
+      ),
+    });
+  }, [navigation]);
  //Function to go to Details Screen
  const handleCharacterSelect =(id)=>{
   navigation.navigate('DetailsScreen' , {id})
@@ -35,11 +42,11 @@ if(error){
         <StatusBar  
         backgroundColor="black"
         barStyle="light-content"/> 
-        <FlatList 
+        {/* <FlatList 
            keyExtractor={flatlistKey}
            data={data.results} 
            renderItem={renderCharacters}
-           />
+           /> */}
       </>
     )
 }
