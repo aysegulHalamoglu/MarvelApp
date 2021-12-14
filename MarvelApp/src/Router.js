@@ -1,5 +1,4 @@
 import React  from 'react';
-import {Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -7,23 +6,15 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './pages/Home';
 import Details from './pages/Details';
 
-// assets
-import logo from './assets/img/Marvel_Logo.png'
+// components
+import LogoTitle from './components/LogoTitle'
 
 
 const Stack = createNativeStackNavigator();
 
 const Router = ( ) => {
 
-  // **** Marvel Logo ***
-  function LogoTitle() {
-    return (
-          <Image
-        style={{ width: 99, height:37 , marginHorizontal: 120}}
-        source={logo}
-      />
-    );
-  }
+ 
   return (
    
       <NavigationContainer>
