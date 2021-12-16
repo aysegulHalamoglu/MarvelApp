@@ -16,13 +16,17 @@ const Home =({navigation})=> {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <SearchIcon color={'#d11a06'} size={25}/>
+        <SearchIcon color={'#d11a06'} size={25} onPress={handleSearchSelect}/>
       ),
     });
   }, [navigation]);
  //Function to go to Details Screen
  const handleCharacterSelect =(id)=>{
   navigation.navigate('DetailsScreen' , {id})
+}
+ //Function to go to Search Screen
+ const handleSearchSelect =()=>{
+  navigation.navigate('SearchModal' )
 }
 
    //Flatlist Details
