@@ -16,7 +16,7 @@ You can see related app video below.
 - [React Native](https://facebook.github.io/react-native/)
 - [react-navigation/native](https://reactnavigation.org/docs/getting-started)
 - [react-navigation/native-stack](https://reactnavigation.org/docs/getting-started)
-- [react-navigation/native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+- [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
 - [md5 : hash generator](https://www.npmjs.com/package/md5)
 
 
