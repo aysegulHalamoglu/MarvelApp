@@ -25,9 +25,7 @@ const useFetch = (url) => {
  //Mounting process : One time process
  useEffect(() => {
     getData();
-    return () => {
-        null
-    }
+    return () => { setData({}); }
 }, [])
 
 return {error,loading,data}

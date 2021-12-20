@@ -3,7 +3,6 @@ import {
   View,
   Text,
   Image,
-  TouchableWithoutFeedback
 } from 'react-native';
 // style
 import styles from './Card.style'

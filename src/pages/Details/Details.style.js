@@ -8,6 +8,7 @@ export default StyleSheet.create({
         flex:1,
       },
       info_container:{
+       height: Dimensions.get('window').height / 1,
       padding:10,
       },
     image_body: {

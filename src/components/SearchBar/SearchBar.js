@@ -3,11 +3,20 @@ import { View, TextInput, StyleSheet } from 'react-native'
 // components
 import SearchIcon from '../SearchIcon'
 
-const SearchBar = () => {
+const SearchBar = (props) => {
+   
     return (
         <View style={styles.container}>
-            <SearchIcon style={styles.searchIcon} size={17} color={"lightgray"}/>
-            <TextInput style={styles.searchBar} placeholder="Search..." placeholderTextColor='#cecaca'/>
+            <SearchIcon 
+                style={styles.searchIcon} 
+                size={17} 
+                color={"lightgray"}/>
+            <TextInput 
+                style={styles.searchBar} 
+                placeholder="Search..." 
+                placeholderTextColor='#cecaca'
+                onChangeText={props.onSearch}
+            />
         </View>
     )
 }

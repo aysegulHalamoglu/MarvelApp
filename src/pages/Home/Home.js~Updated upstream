@@ -20,7 +20,8 @@ const Home =({navigation})=> {
       ),
     });
   }, [navigation]);
- //Function to go to Details Screen
+ 
+  //Function to go to Details Screen
  const handleCharacterSelect =(id)=>{
   navigation.navigate('DetailsScreen' , {id})
 }
@@ -46,11 +47,11 @@ if(error){
         <StatusBar  
         backgroundColor="black"
         barStyle="light-content"/> 
-        <FlatList 
+        {/* <FlatList 
            keyExtractor={flatlistKey}
            data={data.results} 
            renderItem={renderCharacters}
-           />
+           /> */}
       </>
     )
 }

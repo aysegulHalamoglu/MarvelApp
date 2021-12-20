@@ -19,12 +19,15 @@ const Details =({route})=> {
   const seriesURL = `${characterBeforeIdURL}${id}/series${characterAfterIdURL}`;
 
   const renderList = () =>   (
-    <ImageBackground 
+    <ImageBackground    //* background image */
     style={styles.container} 
     source={{ uri: `${data.results[0].thumbnail.path}.${data.results[0].thumbnail.extension}`}}
     blurRadius={50}
     >
-   <ImageBackground style={styles.image_body} source={{ uri: `${data.results[0].thumbnail.path}.${data.results[0].thumbnail.extension}` }}>
+
+   <ImageBackground    //* top header image */}
+   style={styles.image_body} 
+   source={{ uri: `${data.results[0].thumbnail.path}.${data.results[0].thumbnail.extension}` }}>
    </ImageBackground>
  
    <View style={styles.info_container}>
